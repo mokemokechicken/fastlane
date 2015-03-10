@@ -73,11 +73,12 @@ describe Fastlane do
             identity: 'bourne',
             sdk: '10.0',
             ipa: 'JoshIsAwesome.ipa',
+            xcconfig: 'ExtraConfig.xcconfig',
             verbose: nil
           })
         end").runner.execute(:test)
 
-        expect(result.size).to eq(12)
+        expect(result.size).to eq(13)
         expect(result).to include('-w "Test.xcworkspace"')
         expect(result).to include('-p "Test.xcproject"')
         expect(result).to include('-c "Release"')
@@ -89,6 +90,7 @@ describe Fastlane do
         expect(result).to include('-i "bourne"')
         expect(result).to include('--sdk "10.0"')
         expect(result).to include('--ipa "JoshIsAwesome.ipa"')
+        expect(result).to include('--xcconfig "ExtraConfig.xcconfig"')
         expect(result).to include('--verbose')
       end
 
@@ -107,12 +109,13 @@ describe Fastlane do
             identity: 'bourne',
             sdk: '10.0',
             ipa: 'JoshIsAwesome.ipa',
+            xcconfig: 'ExtraConfig.xcconfig',
             verbose: nil,
             hehehe: 'hahah'
           })
         end").runner.execute(:test)
 
-        expect(result.size).to eq(12)
+        expect(result.size).to eq(13)
       end
 
     end

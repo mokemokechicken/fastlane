@@ -31,6 +31,7 @@ module Fastlane
       identity: '-i',
       sdk: '--sdk',
       ipa: '--ipa',
+      xcconfig: '--xcconfig',
       verbose: '--verbose'
     }
 
